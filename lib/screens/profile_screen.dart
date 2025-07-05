@@ -63,7 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            'Chikako', // 名前
+                            'Hanako', // 名前
                             style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
