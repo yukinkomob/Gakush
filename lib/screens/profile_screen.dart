@@ -102,7 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             dataSets: [
                               RadarDataSet(
                                 fillColor: Colors.blue.withOpacity(0.5), // 塗りつぶし色
-                                borderColor: Colors.blue.withOpacity(0.7), // 枠線色
+                                borderColor: Colors.transparent, // 枠線色
                                 borderWidth: 3,
                                 entryRadius: 0, // 各点の半径
                                 dataEntries: radarValues.map((value) {
@@ -168,16 +168,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // ひとことセクション
-                      const Text(
+                      Text(
                         'ひとこと',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.pink.shade100,
+                          ),
                       ),
                       const SizedBox(height: 8),
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
+                          border: BoxBorder.all(
+                            color: Colors.pink.shade100
+                          ),
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
@@ -196,16 +202,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 20),
 
                       // 1週間レポートセクション
-                      const Text(
+                      Text(
                         '1週間レポート',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.pink.shade100
+                          ),
                       ),
                       const SizedBox(height: 8),
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
+                          border: BoxBorder.all(
+                            color: Colors.pink.shade100
+                          ),
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
