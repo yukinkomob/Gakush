@@ -77,8 +77,9 @@ class _MainScreenState extends State<MainScreen> {
         },
         children: const <Widget>[
           // 各タブに対応する画面
-          ProfileScreen(),
           SearchScreen(),
+          SearchScreen(),
+          ProfileScreen(),
           AccountScreen(),
           ChatScreen()
         ],
