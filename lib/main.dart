@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import './screens/chat_screen.dart';
 import './screens/student_home_screen.dart';
+import './screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
         },
         children: const <Widget>[
           // 各タブに対応する画面
-          StudentHomeScreen(),
+          ProfileScreen(),
           SearchScreen(),
           AccountScreen(),
           ChatScreen()
