@@ -90,20 +90,24 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: Colors.grey, // 選択されていないアイテムの色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
+            label: '検索',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Account',
+            icon: Icon(Icons.settings),
+            label: '設定',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.radar), // レーダーチャート用のアイコン
-            label: 'Chat',
+            icon: Icon(Icons.face_retouching_natural),
+            label: 'プロフィール',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.keyboard_return),
+            label: '振り返り',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics), // レーダーチャート用のアイコン
+            label: '自己分析',
           ),
         ],
       ),
