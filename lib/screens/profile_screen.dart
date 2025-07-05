@@ -44,13 +44,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFFFFB6C1), // 薄いピンク (画像より少し濃いめに設定)
-                      Color(0xFFFFE0E6), // 非常に薄いピンク
-                    ],
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/pink_bubble.jpg'),
+                    fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30), // 丸みを帯びた角
