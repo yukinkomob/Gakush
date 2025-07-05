@@ -64,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ガクッシュ！'), // ここにタイトルバーを追加
+        title: const Text(''), // ここにタイトルバーを追加
         centerTitle: true, // タイトルを中央に配置
       ),
       body: PageView(
