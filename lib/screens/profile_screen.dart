@@ -101,21 +101,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           RadarChartData(
                             dataSets: [
                               RadarDataSet(
-                                fillColor: Colors.blue.withOpacity(0.3), // 塗りつぶし色
-                                borderColor: Colors.transparent, // 枠線色
-                                entryRadius: 2, // 各点の半径
+                                fillColor: Colors.blue.withOpacity(0.5), // 塗りつぶし色
+                                borderColor: Colors.blue.withOpacity(0.7), // 枠線色
+                                borderWidth: 3,
+                                entryRadius: 0, // 各点の半径
                                 dataEntries: radarValues.map((value) {
                                   return RadarEntry(value: value);
                                 }).toList(),
                               ),
                             ],
-                            radarBackgroundColor: const Color.fromARGB(255, 172, 213, 255),
+                            radarBackgroundColor: Colors.blue.shade100,
+                            tickBorderData: const BorderSide(
+                                color: Colors.white, width: 2),
                             // グリッド線の設定
                             radarBorderData: const BorderSide(
                                 color: Colors.white, width: 2),
                             radarShape: RadarShape.polygon,
-                            gridBorderData: BorderSide(
-                                color: Colors.white.withOpacity(0.5), width: 2),
+                            gridBorderData: const BorderSide(
+                                color: Colors.white, width: 2),
                             // タイトル
                             getTitle: (index, angle) {
                               final titles = [
@@ -137,7 +140,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // 最大値
                             // max: 5, // レーダーチャートの最大値
                           ),
-                          swapAnimationDuration: Duration.zero,
+                          swapAnimationDuration: Duration(milliseconds: 150),
                         ),
                       ),
                     ),
