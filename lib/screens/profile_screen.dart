@@ -231,9 +231,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         height: 200, // グラフの高さ
                         child: LineChart(
                           LineChartData(
-                            gridData: const FlGridData(
+                            gridData: FlGridData(
                               show: true,
                               drawVerticalLine: false, // 縦線を非表示
+                              getDrawingHorizontalLine: (value) {
+                                return FlLine(
+                                  color: Colors.pink.shade100, // 例えば薄いグレーの点線に
+                                  strokeWidth: 1, // 線の太さ
+                                  dashArray: [5, 5]
+                                );
+                              },
                               horizontalInterval: 1, // 横線の間隔
                             ),
                             titlesData: FlTitlesData(
@@ -273,14 +280,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 spots: weeklyReportData,
                                 isCurved: false, // 滑らかな曲線にしない
                                 barWidth: 2,
-                                color: Colors.blueAccent, // 線の色
+                                color: Colors.pink.shade200, // 線の色
                                 isStrokeCapRound: true,
                                 dotData: FlDotData(
                                   show: true, // 点を表示
                                   getDotPainter: (spot, percent, bar, index) {
                                     return FlDotCirclePainter(
                                       radius: 4,
-                                      color: Colors.blueAccent, // 点の色
+                                      color: Colors.pink.shade200, // 点の色
                                       strokeWidth: 2,
                                       strokeColor: Colors.white, // 点の周りの色
                                     );
@@ -305,8 +312,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: index == 0
-                                  ? Colors.grey // 現在のページ
-                                  : Colors.grey.withOpacity(0.5),
+                                  ? Colors.pink.shade200 // 現在のページ
+                                  : Colors.pink.shade50,
                             ),
                           ),
                         ),
