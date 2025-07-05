@@ -9,15 +9,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // ダミーデータ for レーダーチャート
-  final List<double> radarValues = [
-    3.0, // 共感性
-    4.5, // 達成欲
-    4.0, // 学習欲
-    3.5, // 活躍性
-    2.5, // 個別化
-    3.8, // 戦略性
-  ];
 
   // ダミーデータ for 週間レポート (折れ線グラフ)
   final List<FlSpot> weeklyReportData = [
@@ -101,7 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 borderColor: Colors.transparent, // 枠線色
                                 borderWidth: 3,
                                 entryRadius: 0, // 各点の半径
-                                dataEntries: radarValues.map((value) {
+                                dataEntries: [4.0, 4.5, 4.0, 4.2, 5.0, 4.3].map((value) {
                                   return RadarEntry(value: value);
                                 }).toList(),
                               ),
@@ -136,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // 最大値
                             // max: 5, // レーダーチャートの最大値
                           ),
-                          swapAnimationDuration: Duration(milliseconds: 150),
+                          swapAnimationDuration: Duration.zero,
                         ),
                       ),
                     ),
