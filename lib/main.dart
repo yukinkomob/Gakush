@@ -11,26 +11,150 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ガクッシュ！', // アプリのタイトル
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.blue, // アプリのメインカラー
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MainScreen(), // アプリの開始画面
+    );
+  }
+}
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _currentIndex = 0; // 現在選択されているタブのインデックス
+  late PageController _pageController; // PageViewを制御するためのコントローラ
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentIndex); // 初期ページを設定
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose(); // コントローラを破棄し、リソースを解放
+    super.dispose();
+  }
+
+  // ボトムナビゲーションバーのアイテムがタップされたときに呼び出されるメソッド
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index; // 現在のインデックスを更新
+      _pageController.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 300), // ページ切り替えのアニメーション時間
+        curve: Curves.ease, // アニメーションのカーブ
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ガクッシュ！'), // ここにタイトルバーを追加
+        centerTitle: true, // タイトルを中央に配置
+      ),
+      body: PageView(
+        controller: _pageController,
+        // ユーザーがスワイプでページを切り替えたときに、ボトムナビゲーションバーの選択状態も更新
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        children: const <Widget>[
+          // 各タブに対応する画面
+          HomeScreen(),
+          SearchScreen(),
+          AccountScreen(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex, // 現在選択されているタブを設定
+        onTap: _onTabTapped, // タブがタップされたときの処理
+        selectedItemColor: Colors.blue, // 選択されたアイテムの色
+        unselectedItemColor: Colors.grey, // 選択されていないアイテムの色
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Account',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.home, size: 80, color: Colors.blueAccent),
+          SizedBox(height: 20),
+          Text('Home Screen', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+          Text('Welcome!', style: TextStyle(fontSize: 18, color: Colors.grey)),
+        ],
+      ),
+    );
+  }
+}
+
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.search, size: 80, color: Colors.green),
+          SizedBox(height: 20),
+          Text('Search Screen', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+          Text('Find what you need.', style: TextStyle(fontSize: 18, color: Colors.grey)),
+        ],
+      ),
+    );
+  }
+}
+
+class AccountScreen extends StatelessWidget {
+  const AccountScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.person, size: 80, color: Colors.deepOrange),
+          SizedBox(height: 20),
+          Text('Account Screen', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+          Text('Manage your profile.', style: TextStyle(fontSize: 18, color: Colors.grey)),
+        ],
+      ),
     );
   }
 }
