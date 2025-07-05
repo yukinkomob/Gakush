@@ -61,30 +61,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     // アバター画像
                     Positioned(
-                      top: 60, // 適切な位置に調整
+                      top: 8, // 適切な位置に調整
                       left: 20,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const Text(
+                            'Chikako', // 名前
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white, // 名前と背景色のコントラストを考慮
+                            ),
+                          ),
+                          const SizedBox(height: 8),
                           Container(
                             width: 100, // アバターの幅
                             height: 150, // アバターの高さ (画像の縦横比を参考に調整)
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: const NetworkImage(
-                                    'https://via.placeholder.com/100x150/FFC0CB/000000?text=Chikako'), // プレースホルダー画像
+                                image: const AssetImage(
+                                    'assets/images/avatar1.png'), // プレースホルダー画像
                                 fit: BoxFit.contain,
                               ),
                               borderRadius: BorderRadius.circular(10), // 角を丸く
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          const Text(
-                            'Chikako', // 名前
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white, // 名前と背景色のコントラストを考慮
                             ),
                           ),
                         ],
@@ -92,28 +92,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     // レーダーチャート
                     Positioned(
-                      top: 70, // 適切な位置に調整
+                      top: 30, // 適切な位置に調整
                       right: 20,
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5, // 画面幅の半分程度
-                        height: 150,
+                        height: 200,
                         child: RadarChart(
                           RadarChartData(
                             dataSets: [
                               RadarDataSet(
                                 fillColor: Colors.blue.withOpacity(0.3), // 塗りつぶし色
-                                borderColor: Colors.blue, // 枠線色
+                                borderColor: Colors.transparent, // 枠線色
                                 entryRadius: 2, // 各点の半径
                                 dataEntries: radarValues.map((value) {
                                   return RadarEntry(value: value);
                                 }).toList(),
                               ),
                             ],
+                            radarBackgroundColor: const Color.fromARGB(255, 172, 213, 255),
                             // グリッド線の設定
                             radarBorderData: const BorderSide(
-                                color: Colors.transparent), // 枠線を透明に
+                                color: Colors.white, width: 2),
+                            radarShape: RadarShape.polygon,
                             gridBorderData: BorderSide(
-                                color: Colors.white.withOpacity(0.5), width: 1),
+                                color: Colors.white.withOpacity(0.5), width: 2),
                             // タイトル
                             getTitle: (index, angle) {
                               final titles = [
@@ -131,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // スケール
                             tickCount: 5, // 目盛りの数
                             ticksTextStyle: const TextStyle(
-                                color: Colors.transparent, fontSize: 0), // 目盛り数字を非表示
+                                color: Colors.white, fontSize: 0), // 目盛り数字を非表示
                             // 最大値
                             // max: 5, // レーダーチャートの最大値
                           ),
@@ -141,13 +143,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     // カスタマイズと個別化ボタン
                     Positioned(
-                      bottom: 20,
+                      bottom: 8,
                       left: 20,
                       child: Row(
                         children: [
-                          _buildPillButton('カスタマイズ', Colors.white),
-                          const SizedBox(width: 10),
-                          _buildPillButton('個別化', Colors.white),
+                          _buildPillButton('カスタマイズ', const Color.fromARGB(255, 218, 160, 179)),
                         ],
                       ),
                     ),
@@ -313,7 +313,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.3), // 薄い色で背景を設定
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: color, width: 1), // 枠線
       ),
