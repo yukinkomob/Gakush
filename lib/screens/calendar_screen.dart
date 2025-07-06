@@ -28,32 +28,30 @@ class CalendarScreen extends StatelessWidget {
               width: 70,  // 画像の幅（適宜調整）
               // fit: BoxFit.contain, // 必要に応じてフィットさせる
             ),
-            SizedBox(width: 8), // 画像と左矢印の間に少しスペースを空ける
-            IconButton(
-              icon: Icon(Icons.arrow_left, color: Colors.grey[700]),
-              onPressed: () {},
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_left, color: Colors.grey[700]),
+                  onPressed: () {},
+                ),
+                Text(
+                  '2025年7月',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.arrow_right, color: Colors.grey[700]),
+                  onPressed: () {},
+                ),
+              ],
             ),
-            Text(
-              '2025年7月',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            IconButton(
-              icon: Icon(Icons.arrow_right, color: Colors.grey[700]),
-              onPressed: () {},
-            ),
+            SizedBox(width: 70)
           ],
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.calendar_today, color: Colors.grey[700]),
-            onPressed: () {},
-          ),
-          SizedBox(width: 8), // Padding for the icon
-        ],
       ),
       body: Column(
         children: [
