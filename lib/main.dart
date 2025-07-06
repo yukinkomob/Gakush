@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_application_1/screens/settings_screen.dart';
 import './screens/chat_screen.dart';
 import './screens/student_home_screen.dart';
 import './screens/profile_screen.dart';
 import './screens/calendar_screen.dart';
+import './screens/settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -89,10 +91,10 @@ class _MainScreenState extends State<MainScreen> {
             _currentIndex = index;
           });
         },
-        children: const <Widget>[
+        children: <Widget>[
           // 各タブに対応する画面
           SearchScreen(),
-          SearchScreen(),
+          SettingsScreen(),
           ProfileScreen(),
           AccountScreen(),
           ChatScreen()
