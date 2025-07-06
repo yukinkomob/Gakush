@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import './screens/chat_screen.dart';
 import './screens/student_home_screen.dart';
 import './screens/profile_screen.dart';
+import './screens/calendar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,6 +67,19 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: const Text(''), // ここにタイトルバーを追加
         centerTitle: true, // タイトルを中央に配置
+        actions: [
+          IconButton(
+            icon: Icon(Icons.calendar_month, color: Colors.pink.shade200), // 設定アイコン
+            onPressed: () {
+              // ボタンがタップされたときにSettingsScreenに遷移
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CalendarScreen()),
+              );
+            },
+          ),
+          const SizedBox(width: 8), // アイコンと右端の間に少しスペースを設ける
+        ],
       ),
       body: PageView(
         controller: _pageController,
