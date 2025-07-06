@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_application_1/screens/calendar_screen.dart';
 import 'package:flutter_application_1/screens/self_analysis_screen.dart';
 import 'package:flutter_application_1/screens/settings_screen.dart';
 import './screens/chat_screen.dart';
@@ -76,11 +77,12 @@ class _MainScreenState extends State<MainScreen> {
         },
         children: <Widget>[
           // 各タブに対応する画面
+          CalendarScreen(),
           SearchScreen(),
-          SettingsScreen(),
-          ProfileScreen(),
           ReviewScreen(),
-          SelfAnalysisScreen()
+          ProfileScreen(),
+          SelfAnalysisScreen(),
+          SettingsScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -90,24 +92,28 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: Colors.grey, // 選択されていないアイテムの色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'カレンダー',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: '検索',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: '設定',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.face_retouching_natural),
-            label: 'プロフィール',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.keyboard_return),
             label: '振り返り',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.face_retouching_natural),
+            label: 'プロフィール',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.analytics), // レーダーチャート用のアイコン
             label: '自己分析',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: '設定',
           ),
         ],
       ),
