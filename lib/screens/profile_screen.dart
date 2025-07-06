@@ -127,12 +127,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             // タイトル
                             getTitle: (index, angle) {
                               final titles = [
-                                '達成欲',
-                                '学習欲',
-                                '活躍性',
-                                '個別化',
+                                '主体性',
+                                '好奇心',
+                                '活発性',
+                                '柔軟性',
                                 '戦略性',
-                                '共感性'
+                                '協調性'
                               ];
                               return RadarChartTitle(
                                 text: titles[index],
