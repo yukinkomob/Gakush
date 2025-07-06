@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter_application_1/screens/self_analysis_screen.dart';
 import 'package:flutter_application_1/screens/settings_screen.dart';
 import './screens/chat_screen.dart';
 import './screens/profile_screen.dart';
@@ -79,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
           SettingsScreen(),
           ProfileScreen(),
           ReviewScreen(),
-          ChatScreen()
+          SelfAnalysisScreen()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
