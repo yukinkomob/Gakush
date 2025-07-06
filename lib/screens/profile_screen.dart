@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart'; // fl_chartをインポート
+import './calendar_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -24,6 +25,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(''), // ここにタイトルバーを追加
+        centerTitle: true, // タイトルを中央に配置
+        actions: [
+          IconButton(
+            icon: Icon(Icons.calendar_month, color: Colors.pink.shade200), // 設定アイコン
+            onPressed: () {
+              // ボタンがタップされたときにSettingsScreenに遷移
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CalendarScreen()),
+              );
+            },
+          ),
+          const SizedBox(width: 8), // アイコンと右端の間に少しスペースを設ける
+        ],
+      ),
       backgroundColor: Colors.grey[50], // 全体の背景色
       body: CustomScrollView(
         slivers: [

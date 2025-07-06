@@ -4,8 +4,8 @@ import 'package:flutter_application_1/screens/settings_screen.dart';
 import './screens/chat_screen.dart';
 import './screens/student_home_screen.dart';
 import './screens/profile_screen.dart';
-import './screens/calendar_screen.dart';
 import './screens/settings_screen.dart';
+import './screens/search_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,23 +66,6 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(''), // ここにタイトルバーを追加
-        centerTitle: true, // タイトルを中央に配置
-        actions: [
-          IconButton(
-            icon: Icon(Icons.calendar_month, color: Colors.pink.shade200), // 設定アイコン
-            onPressed: () {
-              // ボタンがタップされたときにSettingsScreenに遷移
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CalendarScreen()),
-              );
-            },
-          ),
-          const SizedBox(width: 8), // アイコンと右端の間に少しスペースを設ける
-        ],
-      ),
       body: PageView(
         controller: _pageController,
         // ユーザーがスワイプでページを切り替えたときに、ボトムナビゲーションバーの選択状態も更新
@@ -145,25 +128,6 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 20),
           Text('Home Screen', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
           Text('Welcome!', style: TextStyle(fontSize: 18, color: Colors.grey)),
-        ],
-      ),
-    );
-  }
-}
-
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.search, size: 80, color: Colors.green),
-          SizedBox(height: 20),
-          Text('Search Screen', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
-          Text('Find what you need.', style: TextStyle(fontSize: 18, color: Colors.grey)),
         ],
       ),
     );

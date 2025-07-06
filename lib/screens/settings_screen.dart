@@ -33,6 +33,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.pink.shade50, Colors.pink.shade100], // 淡いピンクのグラデーション
