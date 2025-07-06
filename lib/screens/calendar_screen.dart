@@ -20,8 +20,15 @@ class CalendarScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Image.asset(
+              'assets/images/logo.png', // あなたのアプリのアイコン画像のパスを指定
+              // height: 30, // 画像の高さ（適宜調整）
+              width: 70,  // 画像の幅（適宜調整）
+              // fit: BoxFit.contain, // 必要に応じてフィットさせる
+            ),
+            SizedBox(width: 8), // 画像と左矢印の間に少しスペースを空ける
             IconButton(
               icon: Icon(Icons.arrow_left, color: Colors.grey[700]),
               onPressed: () {},
@@ -146,7 +153,7 @@ class CalendarScreen extends StatelessWidget {
                     onPressed: () {},
                     icon: Icon(Icons.add, color: Colors.red[400]),
                     label: Text(
-                      '記録をはじめる',
+                      '記録・予定',
                       style: TextStyle(color: Colors.red[400], fontSize: 16),
                     ),
                     style: ElevatedButton.styleFrom(
