@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_application_1/screens/settings_screen.dart';
 import './screens/chat_screen.dart';
-import './screens/student_home_screen.dart';
 import './screens/profile_screen.dart';
-import './screens/settings_screen.dart';
 import './screens/search_screen.dart';
+import './screens/review_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -79,7 +78,7 @@ class _MainScreenState extends State<MainScreen> {
           SearchScreen(),
           SettingsScreen(),
           ProfileScreen(),
-          AccountScreen(),
+          ReviewScreen(),
           ChatScreen()
         ],
       ),
