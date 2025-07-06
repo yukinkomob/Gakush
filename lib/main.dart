@@ -88,7 +88,7 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex, // 現在選択されているタブを設定
         onTap: _onTabTapped, // タブがタップされたときの処理
-        selectedItemColor: Colors.blue, // 選択されたアイテムの色
+        selectedItemColor: Color(0xffff914d), // 選択されたアイテムの色
         unselectedItemColor: Colors.grey, // 選択されていないアイテムの色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

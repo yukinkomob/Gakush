@@ -83,7 +83,7 @@ class _SearchScreenState extends State<SearchScreen> {
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.pink.shade50, Colors.pink.shade100], // 淡いピンクのグラデーション
+            colors: [Colors.orange.shade50, Colors.orange.shade100], // 淡いピンクのグラデーション
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -97,8 +97,8 @@ class _SearchScreenState extends State<SearchScreen> {
                 controller: _searchController,
                 decoration: InputDecoration(
                   hintText: 'キーワードを入力...',
-                  hintStyle: TextStyle(color: Colors.pink.shade300.withOpacity(0.7)),
-                  prefixIcon: Icon(Icons.search, color: Colors.pink),
+                  hintStyle: TextStyle(color: Colors.orange.shade300.withOpacity(0.7)),
+                  prefixIcon: Icon(Icons.search, color: Colors.orange),
                   suffixIcon: _searchController.text.isNotEmpty
                       ? IconButton(
                           icon: Icon(Icons.clear, color: Colors.grey),
@@ -133,17 +133,17 @@ class _SearchScreenState extends State<SearchScreen> {
                         runSpacing: 8.0, // チップ間の垂直方向のスペース
                         children: _popularKeywords.map((keyword) {
                           return ActionChip(
-                            label: Text(keyword, style: TextStyle(color: Colors.pink.shade700)),
+                            label: Text(keyword, style: TextStyle(color: Color(0xffff914d))),
                             avatar: Icon(Icons.star, size: 18, color: Colors.amber), // 可愛らしい星アイコン
                             onPressed: () {
                               _searchController.text = keyword;
                               _addRecentSearch(keyword);
                               _performSearch(keyword);
                             },
-                            backgroundColor: Colors.pink.shade50.withOpacity(0.8),
+                            backgroundColor: Colors.orange.shade50.withOpacity(0.8),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
-                              side: BorderSide(color: Colors.pink.shade200, width: 1),
+                              side: BorderSide(color: Colors.orange.shade200, width: 1),
                             ),
                           );
                         }).toList(),
@@ -157,7 +157,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           : Column(
                               children: _recentSearches.map((record) {
                                 return ListTile(
-                                  leading: Icon(Icons.history, color: Colors.pink.shade300),
+                                  leading: Icon(Icons.history, color: Colors.orange.shade300),
                                   title: Text(record, style: TextStyle(color: Colors.grey.shade800)),
                                   trailing: IconButton(
                                     icon: Icon(Icons.clear, size: 18, color: Colors.grey.shade500),
@@ -195,7 +195,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                     elevation: 2,
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                                     child: ListTile(
-                                      leading: Icon(Icons.event_note, color: Colors.pink),
+                                      leading: Icon(Icons.event_note, color: Colors.orange),
                                       title: Text(_searchResults[index], style: TextStyle(fontWeight: FontWeight.w500)),
                                       subtitle: Text('2024年7月5日', style: TextStyle(color: Colors.grey.shade600)), // ダミーの日付
                                       onTap: () {
@@ -226,7 +226,7 @@ class _SearchScreenState extends State<SearchScreen> {
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
-          color: Colors.pink.shade700,
+          color: Color(0xffff914d),
         ),
       ),
     );

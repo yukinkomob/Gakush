@@ -95,7 +95,7 @@ class CalendarScreen extends StatelessWidget {
                 return Container(
                   decoration: isSelectedDay
                       ? BoxDecoration(
-                          color: Colors.pink[100],
+                          color: Colors.orange[100],
                           shape: BoxShape.circle,
                         )
                       : null,
@@ -122,8 +122,8 @@ class CalendarScreen extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.pink[50]!, // Light pink
-                  Colors.pink[100]!, // Slightly darker pink
+                  Colors.orange[50]!, // Light pink
+                  Colors.orange[100]!, // Slightly darker pink
                 ],
               ),
             ),

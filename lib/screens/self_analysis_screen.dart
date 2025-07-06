@@ -34,7 +34,7 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.pink.shade50, Colors.pink.shade100],
+            colors: [Colors.orange.shade50, Colors.orange.shade100],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -85,7 +85,7 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: Colors.pink.shade700,
+                        color: Color(0xffff914d),
                       ),
                     ),
                     SizedBox(height: 8),
@@ -121,7 +121,7 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
-            color: Colors.pink.shade700,
+            color: Color(0xffff914d),
           ),
         ),
         SizedBox(height: 4),
@@ -165,7 +165,7 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.pink.shade600,
+                      color: Colors.orange.shade600,
                     ),
                   ),
                 ),
@@ -199,14 +199,14 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
           children: [
             Row(
               children: [
-                Icon(Icons.lightbulb_outline, size: 24, color: Colors.pink.shade400),
+                Icon(Icons.lightbulb_outline, size: 24, color: Colors.orange.shade400),
                 SizedBox(width: 8),
                 Text(
                   trait,
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
-                    color: Colors.pink.shade700,
+                    color: Color(0xffff914d),
                   ),
                 ),
                 Spacer(),
@@ -214,16 +214,16 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: Colors.pink.shade100,
+                    color: Colors.orange.shade100,
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Colors.pink.shade200),
+                    border: Border.all(color: Colors.orange.shade200),
                   ),
                   child: Text(
                     '$score%',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Colors.pink.shade800,
+                      color: Colors.orange.shade800,
                     ),
                   ),
                 ),
@@ -251,15 +251,15 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
             // dataEntries: [4.0, 4.5, 4.0, 4.2, 5.0, 4.3].map((value) {
             //   return RadarEntry(value: value);
             // }).toList()
-            borderColor: Colors.pinkAccent.withOpacity(0.7),
-            fillColor: Colors.pinkAccent.withOpacity(0.3),
+            borderColor: Colors.orangeAccent.withOpacity(0.7),
+            fillColor: Colors.orangeAccent.withOpacity(0.3),
             borderWidth: 2,
           ),
         ],
         // チャートの軸の設定
         radarBackgroundColor: Colors.transparent, // 背景色を透明に
-        radarBorderData: const BorderSide(color: Colors.pink, width: 1.5), // レーダーの枠線
-        gridBorderData: BorderSide(color: Colors.pink.shade200, width: 1), // グリッド線
+        radarBorderData: const BorderSide(color: Colors.orange, width: 1.5), // レーダーの枠線
+        gridBorderData: BorderSide(color: Colors.orange.shade200, width: 1), // グリッド線
 
         getTitle: (index, angle) {
           final titles = _analysisScores.keys.toList();
@@ -267,13 +267,13 @@ class _SelfAnalysisScreenState extends State<SelfAnalysisScreen> {
             text: titles[index],
             angle: angle,
             // textStyle: TextStyle(
-            //   color: Colors.pink.shade700,
+            //   color: Color(0xffff914d),
             //   fontWeight: FontWeight.bold,
             //   fontSize: 13,
             // ),
           );
         },
-        tickBorderData: BorderSide(color: Colors.pink.shade200, width: 1), // 目盛りの線
+        tickBorderData: BorderSide(color: Colors.orange.shade200, width: 1), // 目盛りの線
         tickCount: 5, // 目盛りの数 (0.2, 0.4, 0.6, 0.8, 1.0)
         ticksTextStyle: TextStyle(color: Colors.grey.shade600, fontSize: 10), // 目盛りのテキストスタイル
         // スコアの範囲を設定

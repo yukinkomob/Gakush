@@ -28,7 +28,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.pink.shade50, Colors.pink.shade100], // 淡いピンクのグラデーション
+            colors: [Colors.orange.shade50, Colors.orange.shade100], // 淡いピンクのグラデーション
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -62,7 +62,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
                 SizedBox(height: 40),
                 Text('目標を75%達成しました！素晴らしい一週間でしたね！',
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 15, color: Colors.pink.shade700, fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontSize: 15, color: Color(0xffff914d), fontWeight: FontWeight.bold)),
               ],
             ),
             icon: Icons.check_circle_outline,
@@ -109,7 +109,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
                 SizedBox(height: 10),
                 Text('記録継続率88%！着実に習慣化できていますね！',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: Colors.pink.shade700, fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontSize: 15, color: Color(0xffff914d), fontWeight: FontWeight.bold)),
               ],
             ),
             icon: Icons.calendar_today_outlined,
@@ -155,7 +155,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
               children: [
                 Text(
                   'Jibundamを使い始めて${DateTime.now().difference(DateTime(2024, 1, 1)).inDays}日が経ちました！', // ダミーの日数
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.pink.shade700),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xffff914d)),
                 ),
                 SizedBox(height: 8),
                 Text(
@@ -200,7 +200,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.pink.shade700,
+              color: Color(0xffff914d),
             ),
           ),
           SizedBox(height: 4),
@@ -245,7 +245,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.pink.shade600,
+                      color: Colors.orange.shade600,
                     ),
                   ),
                 ),
@@ -267,7 +267,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
         PieChartData(
           sections: [
             PieChartSectionData(
-              color: Colors.pinkAccent,
+              color: Colors.orangeAccent,
               value: percentage * 100,
               title: '${(percentage * 100).toInt()}%',
               radius: 60,
@@ -278,7 +278,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
               ),
             ),
             PieChartSectionData(
-              color: Colors.pink.shade100,
+              color: Colors.orange.shade100,
               value: (1 - percentage) * 100,
               title: '',
               radius: 60,
@@ -302,7 +302,7 @@ class _ReviewScreenState extends State<ReviewScreen> with SingleTickerProviderSt
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.pink.shade700,
+              color: Color(0xffff914d),
             ),
           ),
         ],

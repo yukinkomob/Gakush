@@ -27,20 +27,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(''), // ここにタイトルバーを追加
-        centerTitle: true, // タイトルを中央に配置
-        actions: [
-          IconButton(
-            icon: Icon(Icons.calendar_month, color: Colors.pink.shade200), // 設定アイコン
-            onPressed: () {
-              // ボタンがタップされたときにSettingsScreenに遷移
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => CalendarScreen()),
-              );
-            },
-          ),
-          const SizedBox(width: 8), // アイコンと右端の間に少しスペースを設ける
-        ],
       ),
       backgroundColor: Colors.grey[50], // 全体の背景色
       body: CustomScrollView(
@@ -54,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               background: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/pink_bubble.jpg'),
+                    image: AssetImage('assets/images/bubble.jpg'),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.only(
@@ -178,7 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.pink.shade100,
+                            color: Colors.orange.shade100,
                           ),
                       ),
                       const SizedBox(height: 8),
@@ -187,7 +173,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: BoxBorder.all(
-                            color: Colors.pink.shade100
+                            color: Colors.orange.shade100
                           ),
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
@@ -212,7 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Colors.pink.shade100
+                            color: Colors.orange.shade100
                           ),
                       ),
                       const SizedBox(height: 8),
@@ -221,7 +207,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: BoxBorder.all(
-                            color: Colors.pink.shade100
+                            color: Colors.orange.shade100
                           ),
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
@@ -241,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               drawVerticalLine: false, // 縦線を非表示
                               getDrawingHorizontalLine: (value) {
                                 return FlLine(
-                                  color: Colors.pink.shade100, // 例えば薄いグレーの点線に
+                                  color: Colors.orange.shade100, // 例えば薄いグレーの点線に
                                   strokeWidth: 1, // 線の太さ
                                   dashArray: [5, 5]
                                 );
@@ -285,14 +271,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 spots: weeklyReportData,
                                 isCurved: false, // 滑らかな曲線にしない
                                 barWidth: 2,
-                                color: Colors.pink.shade200, // 線の色
+                                color: Colors.orange.shade200, // 線の色
                                 isStrokeCapRound: true,
                                 dotData: FlDotData(
                                   show: true, // 点を表示
                                   getDotPainter: (spot, percent, bar, index) {
                                     return FlDotCirclePainter(
                                       radius: 4,
-                                      color: Colors.pink.shade200, // 点の色
+                                      color: Colors.orange.shade200, // 点の色
                                       strokeWidth: 2,
                                       strokeColor: Colors.white, // 点の周りの色
                                     );
@@ -317,8 +303,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: index == 0
-                                  ? Colors.pink.shade200 // 現在のページ
-                                  : Colors.pink.shade50,
+                                  ? Colors.orange.shade200 // 現在のページ
+                                  : Colors.orange.shade50,
                             ),
                           ),
                         ),
@@ -365,7 +351,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Profile App',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const ProfileScreen(),

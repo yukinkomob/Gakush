@@ -36,7 +36,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
         padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.pink.shade50, Colors.pink.shade100], // 淡いピンクのグラデーション
+            colors: [Colors.orange.shade50, Colors.orange.shade100], // 淡いピンクのグラデーション
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -57,14 +57,14 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
                         // テーマ切り替えロジック
                       });
                     },
-                    activeColor: Colors.pinkAccent,
+                    activeColor: Colors.orangeAccent,
                   ),
                 ),
                 // _buildSimpleSettingTile(
                 //   title: 'アバター着せ替え',
                 //   trailing: DropdownButton<String>(
                 //     value: _selectedAvatar,
-                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.pink),
+                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.orange),
                 //     underline: Container(),
                 //     onChanged: (String? newValue) {
                 //       setState(() {
@@ -93,7 +93,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
                 //   title: '背景画像',
                 //   trailing: DropdownButton<String>(
                 //     value: _selectedBackground,
-                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.pink),
+                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.orange),
                 //     underline: Container(),
                 //     onChanged: (String? newValue) {
                 //       setState(() {
@@ -113,7 +113,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
                 //   title: 'フォント',
                 //   trailing: DropdownButton<String>(
                 //     value: _selectedFont,
-                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.pink),
+                //     icon: const Icon(Icons.arrow_drop_down, color: Colors.orange),
                 //     underline: Container(),
                 //     onChanged: (String? newValue) {
                 //       setState(() {
@@ -204,7 +204,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
                 color: textColor ?? Colors.grey.shade800,
               ),
             ),
-            trailing ?? Icon(Icons.chevron_right, color: Colors.pink.shade300),
+            trailing ?? Icon(Icons.chevron_right, color: Colors.orange.shade300),
           ],
         ),
       ),
@@ -226,7 +226,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Colors.pink.shade700,
+              color: Color(0xffff914d),
             ),
           ),
         ),
@@ -237,7 +237,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
             borderRadius: BorderRadius.circular(15), // 角丸
             boxShadow: [
               BoxShadow(
-                color: Colors.pink.shade100.withOpacity(0.3),
+                color: Colors.orange.shade100.withOpacity(0.3),
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: Offset(0, 3),
@@ -250,7 +250,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
                 children: [
                   children[index],
                   if (index < children.length - 1)
-                    Divider(height: 1, color: Colors.pink.shade100), // 区切り線
+                    Divider(height: 1, color: Colors.orange.shade100), // 区切り線
                 ],
               );
             }),
@@ -267,7 +267,7 @@ class _SimpleSettingsScreenState extends State<SettingsScreen> {
       barrierDismissible: false,
       builder: (BuildContext dialogContext) {
         return AlertDialog(
-          title: Text('ログアウト', style: TextStyle(color: Colors.pink.shade700)),
+          title: Text('ログアウト', style: TextStyle(color: Color(0xffff914d))),
           content: Text('本当にログアウトしますか？'),
           actions: <Widget>[
             TextButton(
